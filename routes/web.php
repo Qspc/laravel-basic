@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Postcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +16,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('home', function () {
-    return view('home', [
-        "nama" => "shibgotalloh",
-        "image" => "kemi.jpg"
+    return view('welcome', [
+        "title" => "laravel"
     ]);
 });
+
+Route::get('/post', function () {
+    return view('post', [
+        "title" => "post"
+    ]);
+});
+
+Route::get('home', [Postcontroller::class, 'index']);
+
+
+Route::get('posts/{slug}', [Postcontroller::class, 'show']);
