@@ -22,7 +22,11 @@ sebuah komponen engine yang gak usah diinstall lagi. intinya sintax next levelny
 - partial, kita bisa memilih tmapilan mana yg mau muncul mana yg gak mau
 
 
-# MVC laravel
+## MVC laravel
+komponen MVC ada Model, View dan Controller
+
+## Database
+file yang dipakai adalah file env
 
 <!-- Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
