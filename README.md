@@ -32,3 +32,11 @@ php artisan migrate
 - jika ingin akses objek kedalam database (tabel) secara manual maka bisa menggunakan Eloquent object-relational mapper (ORM). tidak hanya itu eloquent juga bisa melakukan CRUD pada database
 - proses pertama untuk memakai eloquent install apl tinker lewat terminal :
 php artisan tinker
+*untuk manggil2 di tinker :
+Post::first() --> manggil data pertama
+Post::pluck('title')--> manggil judulnya saja
+
+## model post
+mencoba mengisi database lewat post, tanpa manual
+- pertama buat file modelnya, bisa pake terminal :
+php artisan make:model -m
