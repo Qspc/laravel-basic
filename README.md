@@ -17,7 +17,8 @@
 
 ## Blade
 sebuah komponen engine yang gak usah diinstall lagi. intinya sintax next levelnya PHP jadi bisa bikin berbagai sintax PHP lebih simpel. contoh manfaat :
-- meringkas penulisan jadi cuma {{  }}
+- meringkas penulisan jadi cuma {{  }} --> kalo ngambil data biasa 
+- kalo data yg ingin menyelamatkan tag2 nya juga pake {!!  !!}
 - bisa bikin yield, dimana fungsi yg berulang2 bisa dibikin disatu tempat jadi gk usah bikin2 terus (contoh : navbar)
 - partial, kita bisa memilih tmapilan mana yg mau muncul mana yg gak mau
 

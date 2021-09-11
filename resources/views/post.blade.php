@@ -6,9 +6,9 @@
     <article>
 
 
-        <h1> {{ $post["title"] }}</h1>
-        <h1> {{ $post["author"] }}</h1>
-        <h1> {{ $post["body"] }}</h1>
+        <h1> {{ $post->title }}</h1>
+        <h1> {{ $post->author }}</h1>
+        <h1> {!! $post->body !!}</h1>
 
 
     </article>
