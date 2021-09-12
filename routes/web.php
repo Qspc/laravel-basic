@@ -3,6 +3,8 @@
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Postcontroller;
+use App\Models\category;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +31,10 @@ Route::get('/post', function () {
 
 Route::get('home', [Postcontroller::class, 'index']);
 Route::get('posts/{post:slug}', [Postcontroller::class, 'show']);
+Route::get('categories/{category:slug}', function (category $category) {
+    return view('category', [
+        'title' => $category->name,
+        'posts' => $category->posts,
+        'category' => $category->name
+    ]);
+});

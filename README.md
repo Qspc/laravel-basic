@@ -41,3 +41,5 @@ Post::pluck('title')--> manggil judulnya saja
 mencoba mengisi database lewat post, tanpa manual
 - pertama buat file modelnya, bisa pake terminal :
 php artisan make:model -m
+
+## relationship
