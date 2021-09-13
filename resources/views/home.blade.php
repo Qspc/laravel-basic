@@ -3,11 +3,13 @@
 
 
 @section('container')
+
+  <h1 class="mt-8 ml-8 text-3xl font-bold">Daftar kosakata SANG</h1>
   
   @foreach ($posts as $post)
-      <article class="mb-4 mx-4">
-        <h1>
-          <a href="posts/{{ $post->slug }}">{{ $post->title }}</a></h1>
+      <article class="mt-8 ml-8">
+        <h1 > <span class="font-bold">{{ $post->id }}.</span>   
+          <a class="text-xl text-blue-700" href="posts/{{ $post->slug }}">{{ $post->title }}</a></h1>
         <h1>{{ $post->author }}</h1>
         <h1>{{ $post->script }}</h1>
       </article>
