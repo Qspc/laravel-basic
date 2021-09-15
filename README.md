@@ -43,3 +43,6 @@ mencoba mengisi database lewat post, tanpa manual
 php artisan make:model -m
 
 ## relationship
+
+## Seeding
+mengisi database cara manual tapi cepat

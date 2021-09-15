@@ -10,7 +10,7 @@
     @foreach ($posts as $post)
         <article class="mt-8">
           <h1 > <span class="font-bold">{{ $post->id }}.</span>   
-            <a class="text-xl text-blue-700" href="posts/{{ $post->slug }}">{{ $post->title }}</a></h1>
+            <a class="text-xl text-blue-700" href="/posts/{{ $post->slug }}">{{ $post->title }}</a></h1>
           <h1>{{ $post->script }}</h1>
         </article>
     @endforeach
