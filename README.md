@@ -45,4 +45,8 @@ php artisan make:model -m
 ## relationship
 
 ## Seeding
-mengisi database cara manual tapi cepat
+mengisi database cara manual tapi cepat, cara pakenya :
+php artisan db:seed
+
+## factory & faker
+generate user random menggunakan library faker
