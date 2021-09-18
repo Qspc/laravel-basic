@@ -8,7 +8,7 @@
         <div class="mb-6">
             <h1 class="text-3xl font-bold"> {{ $post->title }}</h1>
             <p class="text-sm"> Created by : 
-                <a class="text-blue-700" href="/">{{ $post->user->name }}</a> 
+                <a class="text-blue-700" href="/author/{{ $post->user->id }}">{{ $post->user->name }}</a> 
             category : 
                 <a class="text-blue-700" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a> 
             </p>          

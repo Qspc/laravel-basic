@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // User::factory(5)->create();
-        \App\Models\User::factory(10)->create();
 
         // User::create([
         //     'name' => "qspc",
@@ -32,6 +31,8 @@ class DatabaseSeeder extends Seeder
         //     'password' => bcrypt('12345')
         // ]);
 
+        // User::factory(5)->create();
+
         // category::create([
         //     'name' => "film",
         //     'slug' => "film"
@@ -41,6 +42,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => "non film",
         //     'slug' => "non-film"
         // ]);
+
+        Post::factory(3)->create();
 
         // Post::create([
         //     'title' => "sang pencerah",
