@@ -24,11 +24,11 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/post', function () {
-    return view('post', [
-        "title" => "post"
-    ]);
-});
+// Route::get('/post', function () {
+//     return view('post', [
+//         "title" => "post"
+//     ]);
+// });
 
 //home awal
 Route::get('home', [Postcontroller::class, 'index']);
@@ -43,9 +43,9 @@ Route::get('categories/{category:slug}', function (category $category) {
     ]);
 });
 //home sorting user
-Route::get('author/{user}', function (User $user) {
+Route::get('author/{user:id}', function (User $user) {
     return view('posts', [
-        'title' => 'User post',
-        'posts' => $user->post,
+        'title' => $user->name,
+        'posts' => $user->posts,
     ]);
 });

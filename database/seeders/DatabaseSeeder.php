@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // User::factory(5)->create();
+        User::factory(2)->create();
 
         // User::create([
         //     'name' => "qspc",
@@ -33,17 +33,17 @@ class DatabaseSeeder extends Seeder
 
         // User::factory(5)->create();
 
-        // category::create([
-        //     'name' => "film",
-        //     'slug' => "film"
-        // ]);
+        category::create([
+            'name' => "film",
+            'slug' => "film"
+        ]);
 
-        // category::create([
-        //     'name' => "non film",
-        //     'slug' => "non-film"
-        // ]);
+        category::create([
+            'name' => "non film",
+            'slug' => "non-film"
+        ]);
 
-        Post::factory(3)->create();
+        Post::factory(5)->create();
 
         // Post::create([
         //     'title' => "sang pencerah",
