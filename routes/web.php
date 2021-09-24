@@ -1,8 +1,9 @@
 <?php
 
-use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Postcontroller;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Models\category;
 use App\Models\User;
 
@@ -24,11 +25,12 @@ Route::get('/', function () {
     ]);
 });
 
-// Route::get('/post', function () {
-//     return view('post', [
-//         "title" => "post"
-//     ]);
-// });
+//login controller
+Route::get('login', [Logincontroller::class, 'index']);
+
+//register controller
+Route::get('register', [Registercontroller::class, 'index']);
+
 
 //home awal
 Route::get('home', [Postcontroller::class, 'index']);
@@ -42,6 +44,8 @@ Route::get('categories/{category:slug}', function (category $category) {
         'category' => $category->name
     ]);
 });
+
+
 //home sorting user
 Route::get('author/{user:id}', function (User $user) {
     return view('posts', [

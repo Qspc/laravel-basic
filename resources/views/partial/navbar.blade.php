@@ -2,5 +2,7 @@
 
     <div class="mx-2 hover:bg-black-700"><a href="/home">Home</a> </div>
     <div class="mx-2"><a href="/">laravel</a></div>
-  </div>
+    <div class="mx-2"><a href="/login">Login</a></div>
+
+</div>
 

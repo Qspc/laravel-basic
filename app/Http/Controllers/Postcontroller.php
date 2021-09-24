@@ -10,15 +10,15 @@ class Postcontroller extends Controller
 {
     public function index(){
         // dd(request('search'));
-        $posts = Post::latest();
+        // $posts = Post::latest();
 
-        if(request('search')){
-            $posts->where('title', 'like', '%', request('search'), '%');
-        }
+        // if(request('search')){
+        //     $posts->where('title', 'like', '%', request('search'), '%');
+        // }
 
         return view('home', [
             "title" => "home",
-            "posts" => $posts->get()
+            "posts" => Post::latest()
         ]);
     }
 
