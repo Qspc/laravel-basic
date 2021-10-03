@@ -50,3 +50,6 @@ php artisan db:seed
 
 ## factory & faker
 generate user random menggunakan library faker
+
+## pembuatan fitur login & register
+

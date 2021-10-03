@@ -9,7 +9,9 @@
           Registration Form
         </h2>
       </div>
-      <form class="mt-8 space-y-6" action="#" method="POST">
+
+      <form class="mt-8 space-y-6" action="/register" method="POST">
+        @csrf
         <div class="rounded-md shadow-sm -space-y-px">
             <div>
                 <label for="name" class="sr-only">Name</label>

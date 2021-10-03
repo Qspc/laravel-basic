@@ -30,6 +30,7 @@ Route::get('login', [Logincontroller::class, 'index']);
 
 //register controller
 Route::get('register', [Registercontroller::class, 'index']);
+Route::post('register', [Registercontroller::class, 'store']);
 
 
 //home awal
