@@ -52,5 +52,14 @@ php artisan db:seed
 generate user random menggunakan library faker
 
 ## pembuatan fitur login & register
+untuk membuat login dan register hal yg dibuat adalah :
+- tampilan halaman
+- route, ada dua buat perintah Get dan Post
+- Controller, disini juga tempat membuat validasi data yg masuk kriteria
 
 ## after pembuatan fitur login
+saat kita telah login otomatis tombol login tidak boleh muncul diganti oleh logout, begitu juga sebaliknya. oleh karena itu disini digunakan yg namanya Middleware
+pada middleware ada dua jenis :
+- guest, dimana akan muncul jika user belum login
+- auth, dimana akan muncul jika user sudah login
+pemakaian middleware sendiri digunakan pada route

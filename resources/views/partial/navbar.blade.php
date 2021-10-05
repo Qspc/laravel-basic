@@ -4,12 +4,14 @@
     <div class="mx-2"><a href="/">laravel</a></div>
 
     @auth
+        {{-- jika user sudah login maka bakal muncul --}}
         <div class="mx-2"><a href="/dashboard">Dashboard</a></div>
         <form action="logout" method="post">
             @csrf
             <div class="mx-2"><button type="submit" class="font-bold">logout</button></div>
         </form>
         @else
+        {{-- jika belum login maka bakal muncul --}}
             <div class="mx-2"><a href="/login">Login</a></div>
     @endauth
 

@@ -14,12 +14,14 @@ class LoginController extends Controller
         ]);
     }
 
+    // validasi data orang yang akan login
     public function signin(Request $request){
         $credentials = $request->validate([
             'email' => 'required|email:dns',
             'password' => 'required'
         ]);
 
+        //jika login berhasil maka langsung pindah ke halaman dashboard, jika gagal masih di halaman itu
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
@@ -28,6 +30,7 @@ class LoginController extends Controller
         return back();
     }
 
+    //perintah dalam menjalankan logout
     public function logout(Request $request)
     {
         Auth::logout();

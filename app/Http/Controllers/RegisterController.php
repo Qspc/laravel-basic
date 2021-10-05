@@ -13,6 +13,7 @@ class RegisterController extends Controller
         ]);
     }
 
+    // validasi data orang yg akan buat akun (register akun)
     public function store(Request $request ){
         $validatedData = $request->validate([
             'name' => 'required|max:255',
@@ -22,8 +23,10 @@ class RegisterController extends Controller
 
         ]);
 
+        // enkripsi password
         $validatedData['password'] = bcrypt($validatedData['password']);
 
+        //akun dibuat
         User::create($validatedData);
 
         $request->session()->flash('status', 'Registration was successful!');
