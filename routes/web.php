@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Postcontroller;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 use App\Models\category;
 use App\Models\User;
 
@@ -26,10 +27,13 @@ Route::get('/', function () {
 });
 
 //login controller
-Route::get('login', [Logincontroller::class, 'index']);
+Route::get('login', [Logincontroller::class, 'index'])->name('login')->middleware('guest');
+Route::post('login', [Logincontroller::class, 'signin']);
+Route::post('logout', [Logincontroller::class, 'logout']);
+
 
 //register controller
-Route::get('register', [Registercontroller::class, 'index']);
+Route::get('register', [Registercontroller::class, 'index'])->middleware('guest');
 Route::post('register', [Registercontroller::class, 'store']);
 
 
@@ -54,3 +58,6 @@ Route::get('author/{user:id}', function (User $user) {
         'posts' => $user->posts,
     ]);
 });
+
+
+Route::get('dashboard', [Dashboardcontroller::class, 'index'])->middleware('auth');
