@@ -17,7 +17,7 @@ class LoginController extends Controller
     // validasi data orang yang akan login
     public function signin(Request $request){
         $credentials = $request->validate([
-            'email' => 'required|email:dns',
+            'email' => 'required|email',
             'password' => 'required'
         ]);
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\Postcontroller;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardPostController;
 use App\Models\category;
 use App\Models\User;
 
@@ -61,3 +62,4 @@ Route::get('author/{user:id}', function (User $user) {
 
 
 Route::get('dashboard', [Dashboardcontroller::class, 'index'])->middleware('auth');
+Route::resource('/dashboard/posts', DashboardPostcontroller::class)->middleware('auth');
