@@ -22,7 +22,12 @@
                     <tr class="bg-teal-400 flex flex-col flex-no wrap sm:table-row sm:rounded-none mb-2 sm:mb-0">
                         <th class="p-3 text-left">{{ $post->title }}</th>
                         <th class="p-3 text-left">{{ $post->category->name }}</th>
-                        <th class="p-3 text-left" width="110px">Actions</th>
+                        <th class="p-3 text-left" width="110px">
+                          <a href="/dashboard/posts/{{ $post->slug }}"><i class="fas fa-folder-open"></i></a>
+                          <a href="#"><i class="far fa-edit"></i></a>
+                          <a href="#"><i class="fas fa-trash"></i></a> 
+                        </th>
+                        {{-- <th class="p-3 text-left" width="110px"><a href="#"><i class="fa fa-wallet pr-0 md:pr-3"></i></a> </th> --}}
                     </tr>
                     @endforeach
                 </tbody>
