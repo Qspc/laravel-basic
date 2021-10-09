@@ -8,7 +8,9 @@
     </div>
 
     <body class="flex items-center justify-center">
-        <div class="container">
+        <div class="container mt-10 mb-2">
+            <a href="/dashboard/posts/create" class="py-3 px-8 mx-8 bg-blue-700 text-white font-bold rounded-md"> New Post
+            </a>
             <table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
                 <thead class="text-black">
                     <tr class="bg-blue-600 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
@@ -17,6 +19,7 @@
                         <th class="p-3 text-left" width="110px">Actions</th>
                     </tr>
                 </thead>
+                {{-- isi tabel --}}
                 <tbody class="flex-1 sm:flex-none">
                     @foreach ($posts as $post)
                     <tr class="bg-teal-400 flex flex-col flex-no wrap sm:table-row sm:rounded-none mb-2 sm:mb-0">
