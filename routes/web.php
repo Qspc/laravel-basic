@@ -63,3 +63,5 @@ Route::get('author/{user:id}', function (User $user) {
 
 Route::get('dashboard', [Dashboardcontroller::class, 'index'])->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostcontroller::class)->middleware('auth');
+Route::get('/dashboard/posts/checkSlug', [DashboardPostcontroller::class, 'checkSlug'] )->middleware('auth');
+

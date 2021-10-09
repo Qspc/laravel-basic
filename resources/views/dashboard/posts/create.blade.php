@@ -14,19 +14,20 @@
           </div>
     </form> --}}
     <form action="#" method="POST">
+      @csrf
         <div class="md:grid md:grid-cols-2 overflow-hidden sm:rounded-md">
           <div class="px-4 py-5 sm:p-6">
               <div class="col-span-6 sm:col-span-3">
-                <label for="first_name" class="block text-sm font-medium text-gray-700">First name</label>
-                <input type="text" name="first_name" id="first_name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-black-700 rounded-sm">
+                <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                <input type="text" name="title" id="title" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full shadow-sm lg:text-sm border-black-700 rounded-sm">
               </div>
 
               <div class="col-span-6 sm:col-span-3">
-                <label for="last_name" class="block text-sm font-medium text-gray-700">Last name</label>
-                <input type="text" name="last_name" id="last_name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                <label for="slug" class="block text-sm font-medium text-gray-700">Slug</label>
+                <input type="text" name="slug" id="slug" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-sm">
               </div>
 
-              <div class="col-span-6 sm:col-span-4">
+              {{-- <div class="col-span-6 sm:col-span-4">
                 <label for="email_address" class="block text-sm font-medium text-gray-700">Email address</label>
                 <input type="text" name="email_address" id="email_address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
               </div>
@@ -53,12 +54,9 @@
               <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                 <label for="state" class="block text-sm font-medium text-gray-700">State / Province</label>
                 <input type="text" name="state" id="state" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-              </div>
+              </div> --}}
 
-              <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                <label for="postal_code" class="block text-sm font-medium text-gray-700">ZIP / Postal</label>
-                <input type="text" name="postal_code" id="postal_code" autocomplete="postal-code" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-              </div>
+
             <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                 <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                   Save
@@ -67,4 +65,14 @@
         </div>
       </form>
 
+      <script>
+        const title = document.querySelector('#title');
+        const slug = document.querySelector('#slug');
+
+        title.addEventListener('change', function(){
+          fetch('/dashboard/posts/checkSlug?title=' + title.value)
+            .then(response => response.json())
+            .then(data => slug.value = data.slug)
+        });
+      </script>
 @endsection
