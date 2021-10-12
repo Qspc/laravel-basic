@@ -10,12 +10,22 @@
     <meta name="description" content="description here">
     <meta name="keywords" content="keywords,here">
 
+    {{-- trix editor --}}
+    <link rel="stylesheet" type="text/css" href="/css/trix.css">
+  <script type="text/javascript" src="/js/trix.js"></script>
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> <!--Replace with your tailwind.css once created-->
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet"> <!--Totally optional :) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js" integrity="sha256-xKeoJ50pzbUGkpQxDYHD7o7hxe0LaOGeguUidbq6vis=" crossorigin="anonymous"></script>
 
 </head>
+
+<style>
+    trix-toolbar [data-trix-button-group="file-tools"] {
+        display: none;
+    }
+</style>
 
 
 <body class="bg-gray-800 font-sans leading-normal tracking-normal mt-12">

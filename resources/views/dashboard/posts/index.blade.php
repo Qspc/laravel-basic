@@ -30,7 +30,6 @@
                           <a href="#"><i class="far fa-edit"></i></a>
                           <a href="#"><i class="fas fa-trash"></i></a> 
                         </th>
-                        {{-- <th class="p-3 text-left" width="110px"><a href="#"><i class="fa fa-wallet pr-0 md:pr-3"></i></a> </th> --}}
                     </tr>
                     @endforeach
                 </tbody>

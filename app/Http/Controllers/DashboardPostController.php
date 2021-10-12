@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\post;
+use App\Models\category;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,10 @@ class DashboardPostController extends Controller
      */
     public function create()
     {
-        return view('dashboard.posts.create');
+        return view('dashboard.posts.create', [
+            'categories' => category::all()
+        ]);
+
     }
 
     /**
@@ -39,7 +43,7 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return dd('cek bisa');
     }
 
     /**
