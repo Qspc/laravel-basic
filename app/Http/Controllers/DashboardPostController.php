@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\post;
+use Illuminate\Support\Str;
 use App\Models\category;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
@@ -43,7 +44,19 @@ class DashboardPostController extends Controller
      */
     public function store(Request $request)
     {
-        return dd('cek bisa');
+
+        $validatesData = $request->validate([
+            'title' => 'required|max:255',
+            'slug' => 'required|unique:posts',
+            'body' => 'required',
+            'category_id' => 'required',
+        ]);
+
+        $validatesData['user_id'] = auth()->user()->id;
+        $validatesData['script'] = Str::limit(strip_tags( $request->body, 100));
+
+        Post::create($validatesData);
+        return redirect('/dashboard/posts')->with('success', 'New post has been added');
     }
 
     /**
