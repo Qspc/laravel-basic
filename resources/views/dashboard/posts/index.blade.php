@@ -35,9 +35,16 @@
                         <th class="p-3 text-left">{{ $post->title }}</th>
                         <th class="p-3 text-left">{{ $post->category->name }}</th>
                         <th class="p-3 text-left" width="110px">
+                          {{-- view data baru --}}
                           <a href="/dashboard/posts/{{ $post->slug }}"><i class="fas fa-folder-open"></i></a>
-                          <a href="#"><i class="far fa-edit"></i></a>
-                          <a href="#"><i class="fas fa-trash"></i></a> 
+                          {{-- edit data --}}
+                          <a href="/dashboard/posts/{{ $post->slug }}/edit"><i class="far fa-edit"></i></a>
+                          {{-- delete data --}}
+                          <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="inline-block">
+                            @csrf
+                            @method('delete')
+                            <button onclick="return confirm('are you sure?')"><span><i class="fas fa-trash"></i></span></button>
+                          </form>
                         </th>
                     </tr>
                     @endforeach
