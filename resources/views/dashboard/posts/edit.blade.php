@@ -15,7 +15,7 @@
               {{-- judul --}}
               <div class="col-span-6 sm:col-span-3">
                 <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-                <input type="text" name="title" id="title" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full shadow-sm lg:text-sm border-black-700 rounded-sm" autofocus value="{{ old('title', $post->title) }}">
+                <input type="text" name="title" id="title" autocomplete="given-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full shadow-sm lg:text-sm border-black-700 rounded-sm" value="{{ $post->title }}">
               </div>
               @error('title')
               <div class="text-sm text-red-700">
@@ -26,7 +26,7 @@
               {{-- slug --}}
               <div class="col-span-6 sm:col-span-3 mt-4">
                 <label for="slug" class="block text-sm font-medium text-gray-700">Slug</label>
-                <input type="text" name="slug" id="slug" autocomplete="family-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full shadow-sm sm:text-sm border-black-700 rounded-sm" value="{{ old('slug'), $post->slug }}">
+                <input type="text" name="slug" id="slug" autocomplete="family-name" class="mt-1 focus:ring-black-500 focus:border-black-500 block w-full shadow-sm sm:text-sm border-black-700 rounded-sm" value="{{ $post->slug }}">
               </div>
               @error('slug')
               <div class="text-sm text-red-700">
@@ -47,7 +47,7 @@
               {{-- body --}}
               <div class="col-span-6 sm:col-span-3 mt-4">
                 <label for="body" class="block text-sm font-medium text-gray-700">Body</label>
-                <input value="{{ old('body', $post->body)}}" id="body" type="hidden" name="body">
+                <input value="{{ $post->body}}" id="body" type="hidden" name="body">
                 <trix-editor input="body"></trix-editor>
               </div>
               @error('body')

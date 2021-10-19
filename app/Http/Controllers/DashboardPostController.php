@@ -50,7 +50,9 @@ class DashboardPostController extends Controller
             'slug' => 'required|unique:posts',
             'body' => 'required',
             'category_id' => 'required',
+            'image' => 'image|file'
         ]);
+
 
         $validatesData['user_id'] = auth()->user()->id;
         $validatesData['script'] = Str::limit(strip_tags( $request->body, 100));
