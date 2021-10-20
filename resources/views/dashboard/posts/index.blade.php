@@ -33,7 +33,7 @@
                     @foreach ($posts as $post)
                     <tr class="bg-teal-400 flex flex-col flex-no wrap sm:table-row sm:rounded-none mb-2 sm:mb-0">
                         <th class="p-3 text-left">{{ $post->title }}</th>
-                        <th class="p-3 text-left">{{ $post->category }}</th>
+                        <th class="p-3 text-left">{{ $post->category->name }}</th>
                         <th class="p-3 text-left" width="110px">
                           {{-- view data baru --}}
                           <a href="/dashboard/posts/{{ $post->slug }}"><i class="fas fa-folder-open"></i></a>

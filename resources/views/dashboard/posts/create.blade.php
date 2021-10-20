@@ -44,14 +44,11 @@
               </div>
 
               {{-- gambar --}}
-              <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/custom-forms@0.2.1/dist/custom-forms.css" rel="stylesheet">
               <div class="col-span-6 sm:col-span-3 mt-4">
-                <label for="image"
-                class="w-48 flex flex-col items-center px-4 py-6 bg-white rounded-md shadow-md tracking-wide uppercase border border-blue cursor-pointer hover:bg-purple-600 hover:text-white text-purple-600 ease-linear transition-all duration-150">
-                <i class="fas fa-cloud-upload-alt fa-1x"></i>
-                <span class="mt-2 text-xs leading-small">Choose the image</span>
-                <input type='file' class="hidden" id="image" name="image" />
-              </label>
+                <div class="mb-3">
+                  <label for="image" class="block text-sm font-medium text-gray-700">Post image</label>
+                  <input class="form-control" type="file" id="image" name="image">
+                </div>
               </div>
               @error('image')
               <div class="text-sm text-red-700">
