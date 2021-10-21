@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <form action="/dashboard/posts/{{ $post->slug }}" method="POST">
+    <form action="/dashboard/posts/{{ $post->slug }}" method="POST" enctype="multipart/form-data">
       @method('put')
       @csrf
         <div class="md:grid md:grid-cols-2 overflow-hidden sm:rounded-md">
@@ -43,6 +43,19 @@
                   @endforeach
                 </select>
               </div>
+
+            {{-- gambar --}}
+            <div class="col-span-6 sm:col-span-3 mt-4 mb-3">
+                <label for="image" class="block text-sm font-medium text-gray-700">Post image</label>
+                <input type="hidden" name="oldImage" value="{{ $post->image }}">
+                <img src="{{ asset('storage/'. $post->image) }}" alt="" class="img-preview w-64 inline-block">
+                <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
+            </div>
+            @error('image')
+            <div class="text-sm text-red-700">
+              {{ $message }}   
+            </div>
+            @enderror
 
               {{-- body --}}
               <div class="col-span-6 sm:col-span-3 mt-4">

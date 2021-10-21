@@ -15,8 +15,7 @@
         <div class="w-96 object-center	">
             <img src="{{ asset('/storage/' . $post->image) }}" alt="{{ $post->category->image }}">
         </div>
-        <h1> {{ $post->author }}</h1>
-        <h1> {!! $post->body !!}</h1>
+        <h1 class="mt-4"> {!! $post->body !!}</h1>
 
         <a class="text-sm" href="/dashboard/posts">back to <span class="text-blue-700">My post</span> </a>
     </article>

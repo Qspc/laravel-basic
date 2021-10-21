@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 use App\Models\category;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 
 class DashboardPostController extends Controller
@@ -103,6 +105,7 @@ class DashboardPostController extends Controller
             'title' => 'required|max:255',
             'body' => 'required',
             'category_id' => 'required',
+            'image' => 'image'
         ];
 
         // fungsi agar gak ada slug yg numpuk
@@ -111,6 +114,10 @@ class DashboardPostController extends Controller
         }
         $validatesData = $request->validate($rules);
 
+        if($request->oldImage){
+            Storage::delete($request->oldImage);
+        }
+        $validatesData['image'] = $request->file('image')->store('post-images');
         $validatesData['user_id'] = auth()->user()->id;
         $validatesData['script'] = Str::limit(strip_tags( $request->body, 100));
 
@@ -128,6 +135,9 @@ class DashboardPostController extends Controller
      */
     public function destroy(post $post)
     {
+        if($post->image){
+            Storage::delete($post->image);
+        }
         Post::destroy($post->id);
         return redirect('/dashboard/posts')->with('success', 'post has been deleted'); 
     }
