@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminCategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Postcontroller;
 use App\Http\Controllers\LoginController;
@@ -66,3 +67,4 @@ Route::get('/dashboard', [Dashboardcontroller::class, 'index'])->middleware('aut
 Route::resource('/dashboard/posts', DashboardPostcontroller::class)->middleware('auth');
 Route::get('/dashboard/posts/checkSlug', [DashboardPostcontroller::class, 'checkSlug'] )->middleware('auth');
 
+Route::resource('/dashboard/categories', AdminCategoryController::class)->middleware('auth');
