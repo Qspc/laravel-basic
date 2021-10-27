@@ -63,3 +63,8 @@ pada middleware ada dua jenis :
 - guest, dimana akan muncul jika user belum login
 - auth, dimana akan muncul jika user sudah login
 pemakaian middleware sendiri digunakan pada route
+
+## admin
+cara supaya bisa bikin fitur admin :
+- pake middleware, bikin middleware baru lewat make:middleware (nama)
+- bikin pake gate, cek di website laravel "gates" lalu masukan kodingan di appserviceprovider.php

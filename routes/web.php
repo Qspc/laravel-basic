@@ -67,4 +67,4 @@ Route::get('/dashboard', [Dashboardcontroller::class, 'index'])->middleware('aut
 Route::resource('/dashboard/posts', DashboardPostcontroller::class)->middleware('auth');
 Route::get('/dashboard/posts/checkSlug', [DashboardPostcontroller::class, 'checkSlug'] )->middleware('auth');
 
-Route::resource('/dashboard/categories', AdminCategoryController::class)->middleware('auth');
+Route::resource('/dashboard/categories', AdminCategoryController::class)->middleware('admin');

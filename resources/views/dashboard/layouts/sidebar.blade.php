@@ -12,6 +12,7 @@
         </li>
     </ul>
 
+    @can('admin')
     {{-- administrator --}}
     <ul class="list-reset flex flex-row md:flex-col py-0 md:py-3 px-1 md:px-2 text-center md:text-left">
         <li class="mr-3 flex-1">
@@ -20,4 +21,6 @@
             </a>
         </li>
     </ul>
+    @endcan
+    
 </div>
